@@ -1,0 +1,173 @@
+object Form1: TForm1
+  Left = 0
+  Top = 0
+  BorderStyle = bsNone
+  Caption = 'Form1'
+  ClientHeight = 320
+  ClientWidth = 430
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  Position = poDesktopCenter
+  PixelsPerInch = 96
+  TextHeight = 13
+  object lbl1: TLabel
+    Left = 8
+    Top = 64
+    Width = 50
+    Height = 13
+    Caption = 'ID_SENHA'
+    FocusControl = dbedtID_SENHA
+  end
+  object lbl2: TLabel
+    Left = 8
+    Top = 104
+    Width = 63
+    Height = 13
+    Caption = 'ID_EMPRESA'
+    FocusControl = dbedtID_EMPRESA
+  end
+  object lbl3: TLabel
+    Left = 8
+    Top = 144
+    Width = 29
+    Height = 13
+    Caption = 'NOME'
+    FocusControl = dbedtNOME
+  end
+  object lbl4: TLabel
+    Left = 8
+    Top = 184
+    Width = 46
+    Height = 13
+    Caption = 'USUARIO'
+    FocusControl = dbedtUSUARIO
+  end
+  object lbl5: TLabel
+    Left = 167
+    Top = 184
+    Width = 33
+    Height = 13
+    Caption = 'SENHA'
+    FocusControl = dbedtSENHA
+  end
+  object lbl6: TLabel
+    Left = 8
+    Top = 224
+    Width = 28
+    Height = 13
+    Caption = 'NIVEL'
+    FocusControl = dbedtNIVEL
+  end
+  object lbl7: TLabel
+    Left = 152
+    Top = 104
+    Width = 52
+    Height = 13
+    Caption = 'EMPRESAS'
+    FocusControl = dbedtEMPRESAS
+  end
+  object dbedtID_SENHA: TDBEdit
+    Left = 8
+    Top = 80
+    Width = 134
+    Height = 21
+    DataField = 'ID_SENHA'
+    DataSource = Ds1
+    TabOrder = 0
+  end
+  object dbedtID_EMPRESA: TDBEdit
+    Left = 8
+    Top = 120
+    Width = 134
+    Height = 21
+    DataField = 'ID_EMPRESA'
+    DataSource = Ds1
+    TabOrder = 1
+  end
+  object dbedtNOME: TDBEdit
+    Left = 8
+    Top = 160
+    Width = 394
+    Height = 21
+    DataField = 'NOME'
+    DataSource = Ds1
+    TabOrder = 2
+  end
+  object dbedtUSUARIO: TDBEdit
+    Left = 8
+    Top = 200
+    Width = 153
+    Height = 21
+    DataField = 'USUARIO'
+    DataSource = Ds1
+    TabOrder = 3
+  end
+  object dbedtSENHA: TDBEdit
+    Left = 167
+    Top = 200
+    Width = 235
+    Height = 21
+    DataField = 'SENHA'
+    DataSource = Ds1
+    TabOrder = 4
+  end
+  object dbedtNIVEL: TDBEdit
+    Left = 8
+    Top = 240
+    Width = 134
+    Height = 21
+    DataField = 'NIVEL'
+    DataSource = Ds1
+    TabOrder = 5
+  end
+  object dbedtEMPRESAS: TDBEdit
+    Left = 152
+    Top = 120
+    Width = 250
+    Height = 21
+    DataField = 'EMPRESAS'
+    DataSource = Ds1
+    TabOrder = 6
+  end
+  object pnl1: TPanel
+    Left = 0
+    Top = 0
+    Width = 430
+    Height = 41
+    Align = alTop
+    BevelOuter = bvNone
+    Caption = 'Cadastro de Usuarios'
+    Color = 1228799
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWhite
+    Font.Height = -20
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentBackground = False
+    ParentFont = False
+    TabOrder = 7
+    ExplicitWidth = 422
+  end
+  object dbnvgr1: TDBNavigator
+    Left = 0
+    Top = 279
+    Width = 430
+    Height = 41
+    DataSource = Ds1
+    Align = alBottom
+    TabOrder = 8
+    ExplicitLeft = 8
+    ExplicitTop = 280
+    ExplicitWidth = 390
+  end
+  object Ds1: TDataSource
+    DataSet = DM.QRY_acesso
+    Left = 216
+    Top = 232
+  end
+end

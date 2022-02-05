@@ -1,0 +1,145 @@
+unit U_Login;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.Buttons,
+  dxGDIPlusClasses, Vcl.ExtCtrls, Vcl.ComCtrls, Data.DB, Vcl.DBCtrls;
+
+type
+  Tfrm_login = class(TForm)
+    pnl1: TPanel;
+    pnl2: TPanel;
+    stat1: TStatusBar;
+    tmr1: TTimer;
+    img1: TImage;
+    edtUsuario: TEdit;
+    edt_senha: TEdit;
+    lbl1: TLabel;
+    lbl2: TLabel;
+    cbx1: TComboBox;
+    lbl3: TLabel;
+    btn1: TBitBtn;
+    btn2: TBitBtn;
+    pnl3: TPanel;
+    img2: TImage;
+    lbl_data: TLabel;
+    Ds1: TDataSource;
+    dblkcbb1: TDBLookupComboBox;
+    procedure tmr1Timer(Sender: TObject);
+    procedure FormShow(Sender: TObject);
+    procedure btn1Click(Sender: TObject);
+    procedure btn2Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  frm_login: Tfrm_login;
+
+implementation
+
+uses
+  U_principal, U_dataModulo;
+
+{$R *.dfm}
+
+procedure Tfrm_login.btn1Click(Sender: TObject);
+begin
+FRM_PRINCIPAL.imgcentro.Visible:=True;
+Close;
+end;
+
+procedure Tfrm_login.btn2Click(Sender: TObject);
+begin
+  dm.QRY_acesso.Close;
+  dm.QRY_acesso.ParamByName('USUARIO').AsString := edtusuario.Text;
+  dm.QRY_acesso.ParamByName('SENHA').AsString := edt_senha.Text;
+  dm.QRY_acesso.ParamByName('EMPRESA').AsString := dblkcbb1.Text;
+  dm.QRY_acesso.Open();
+
+  Nivel_acesso:=DMCliente.RDWUSUARIONIVEL.Value;
+
+    if DMCliente.RDWUSUARIO.IsEmpty then
+  begin
+  DMCliente.RDWUSUARIO.Close;
+    ShowMessage('nao cadastrado');
+    Application.Terminate;
+  end else
+  begin
+//frm_principal.Show;
+  frm_login.Close;
+  Frm_principal.pnlimagem.Visible:=False;
+
+      // Nivel de segurança 01
+
+    if nivel_acesso = 1 then
+    begin
+    Frm_principal.btnempresa.Enabled      :=False;
+    Frm_principal.btnencomenda.Enabled    :=False;
+    Frm_principal.btncliente.Enabled      :=True;
+    Frm_principal.btnfornecedor.Enabled   :=True;
+    Frm_principal.btnFuncionario.Enabled  :=True;
+
+    Frm_principal.btnvendapassagem.Enabled:=False;
+    Frm_principal.btnlinha.Enabled        :=False;
+    Frm_principal.btnFolhaPgto.Enabled    :=False;
+    Frm_principal.btncaixa.Enabled        :=False;
+    Frm_principal.btnContapagar.Enabled   :=False;
+    Frm_principal.btnmanutencao.Enabled   :=False;
+    Frm_principal.btnorcaencomenda.Enabled:=True;
+    Frm_principal.btnSenha.Enabled        :=False;
+  end
+  else if nivel_acesso = 2 then
+  begin
+   Frm_principal.btnempresa.Enabled      :=False;
+    Frm_principal.btnencomenda.Enabled    :=True;
+    Frm_principal.btncliente.Enabled      :=True;
+    Frm_principal.btnfornecedor.Enabled   :=True;
+    Frm_principal.btnFuncionario.Enabled  :=True;
+
+    Frm_principal.btnvendapassagem.Enabled:=True;
+    Frm_principal.btnlinha.Enabled        :=True;
+    Frm_principal.btnFolhaPgto.Enabled    :=False;
+    Frm_principal.btncaixa.Enabled        :=False;
+    Frm_principal.btnContapagar.Enabled   :=False;
+    Frm_principal.btnmanutencao.Enabled   :=True;
+    Frm_principal.btnorcaencomenda.Enabled:=True;
+    Frm_principal.btnSenha.Enabled        :=False;
+  end
+    else if nivel_acesso = 3 then
+    begin
+    Frm_principal.btnempresa.Enabled      :=True;
+    Frm_principal.btnencomenda.Enabled    :=True;
+    Frm_principal.btncliente.Enabled      :=True;
+    Frm_principal.btnfornecedor.Enabled   :=True;
+    Frm_principal.btnFuncionario.Enabled  :=True;
+
+    Frm_principal.btnvendapassagem.Enabled:=True;
+    Frm_principal.btnlinha.Enabled        :=True;
+    Frm_principal.btnFolhaPgto.Enabled    :=True;
+    Frm_principal.btncaixa.Enabled        :=True;
+    Frm_principal.btnContapagar.Enabled   :=True;
+    Frm_principal.btnmanutencao.Enabled   :=True;
+    Frm_principal.btnorcaencomenda.Enabled:=True;
+    Frm_principal.btnSenha.Enabled        :=True;
+end;
+
+end;
+end;
+
+procedure Tfrm_login.FormShow(Sender: TObject);
+begin
+lbl_data.Caption:=FormatDateTime('dddddd',date);
+end;
+
+procedure Tfrm_login.tmr1Timer(Sender: TObject);
+begin
+   stat1.Panels[0].Text:=TimeToStr(time);
+
+end;
+
+end.

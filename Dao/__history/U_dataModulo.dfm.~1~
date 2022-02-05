@@ -1,0 +1,32 @@
+object DM: TDM
+  OldCreateOrder = False
+  Height = 302
+  Width = 487
+  object Conn1: TFDConnection
+    Params.Strings = (
+      'Database=C:\ExtraDigital\Banco\DADOS.FDB'
+      'User_Name=sysdba'
+      'Password=masterkey'
+      'DriverID=FB')
+    Connected = True
+    Left = 88
+    Top = 32
+  end
+  object QRY1: TFDQuery
+    ObjectView = False
+    Connection = Conn1
+    SQL.Strings = (
+      'select * from empresa')
+    Left = 88
+    Top = 104
+  end
+  object Wait1: TFDGUIxWaitCursor
+    Provider = 'Forms'
+    Left = 152
+    Top = 32
+  end
+  object Mysql1: TFDPhysMySQLDriverLink
+    Left = 208
+    Top = 33
+  end
+end

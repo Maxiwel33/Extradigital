@@ -1,0 +1,287 @@
+object Frm_empresa: TFrm_empresa
+  Left = 0
+  Top = 0
+  BorderStyle = bsNone
+  Caption = 'Cadaempresa'
+  ClientHeight = 444
+  ClientWidth = 738
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  Position = poDesktopCenter
+  PixelsPerInch = 96
+  TextHeight = 13
+  object pnl1: TPanel
+    Left = 0
+    Top = 0
+    Width = 738
+    Height = 444
+    Align = alClient
+    BevelOuter = bvNone
+    TabOrder = 0
+    ExplicitLeft = 144
+    ExplicitTop = 128
+    ExplicitWidth = 185
+    ExplicitHeight = 41
+    object lbl1: TLabel
+      Left = 40
+      Top = 96
+      Width = 46
+      Height = 13
+      Caption = 'EMPRESA'
+      FocusControl = dbedtEMPRESA
+    end
+    object lbl2: TLabel
+      Left = 40
+      Top = 136
+      Width = 72
+      Height = 13
+      Caption = 'RAZAOSOCIAL'
+      FocusControl = dbedtRAZAOSOCIAL
+    end
+    object lbl3: TLabel
+      Left = 40
+      Top = 176
+      Width = 25
+      Height = 13
+      Caption = 'CNPJ'
+      FocusControl = dbedtCNPJ
+    end
+    object lbl4: TLabel
+      Left = 40
+      Top = 216
+      Width = 10
+      Height = 13
+      Caption = 'IE'
+      FocusControl = dbedtIE
+    end
+    object lbl5: TLabel
+      Left = 40
+      Top = 256
+      Width = 54
+      Height = 13
+      Caption = 'ENDERECO'
+      FocusControl = dbedtENDERECO
+    end
+    object lbl6: TLabel
+      Left = 40
+      Top = 296
+      Width = 43
+      Height = 13
+      Caption = 'NUMERO'
+      FocusControl = dbedtNUMERO
+    end
+    object lbl7: TLabel
+      Left = 40
+      Top = 336
+      Width = 38
+      Height = 13
+      Caption = 'CIDADE'
+      FocusControl = dbedtCIDADE
+    end
+    object lbl8: TLabel
+      Left = 40
+      Top = 376
+      Width = 13
+      Height = 13
+      Caption = 'UF'
+      FocusControl = dbedtUF
+    end
+    object lbl9: TLabel
+      Left = 40
+      Top = 416
+      Width = 39
+      Height = 13
+      Caption = 'BAIRRO'
+      FocusControl = dbedtBAIRRO
+    end
+    object lbl10: TLabel
+      Left = 40
+      Top = 456
+      Width = 19
+      Height = 13
+      Caption = 'CEP'
+      FocusControl = dbedtCEP
+    end
+    object lbl11: TLabel
+      Left = 40
+      Top = 496
+      Width = 27
+      Height = 13
+      Caption = 'FONE'
+      FocusControl = dbedtFONE
+    end
+    object lbl12: TLabel
+      Left = 40
+      Top = 536
+      Width = 19
+      Height = 13
+      Caption = 'FAX'
+      FocusControl = dbedtFAX
+    end
+    object lbl13: TLabel
+      Left = 40
+      Top = 576
+      Width = 30
+      Height = 13
+      Caption = 'EMAIL'
+      FocusControl = dbedtEMAIL
+    end
+    object lbl14: TLabel
+      Left = 40
+      Top = 616
+      Width = 13
+      Height = 13
+      Caption = 'HP'
+      FocusControl = dbedtHP
+    end
+    object pnl2: TPanel
+      Left = 0
+      Top = 0
+      Width = 738
+      Height = 64
+      Align = alTop
+      Color = 1228799
+      ParentBackground = False
+      TabOrder = 0
+      ExplicitLeft = 1
+      ExplicitTop = 1
+      ExplicitWidth = 885
+    end
+    object dbedtEMPRESA: TDBEdit
+      Left = 40
+      Top = 112
+      Width = 784
+      Height = 21
+      DataField = 'EMPRESA'
+      DataSource = Ds1
+      TabOrder = 1
+    end
+    object dbedtRAZAOSOCIAL: TDBEdit
+      Left = 40
+      Top = 152
+      Width = 784
+      Height = 21
+      DataField = 'RAZAOSOCIAL'
+      DataSource = Ds1
+      TabOrder = 2
+    end
+    object dbedtCNPJ: TDBEdit
+      Left = 40
+      Top = 192
+      Width = 264
+      Height = 21
+      DataField = 'CNPJ'
+      DataSource = Ds1
+      TabOrder = 3
+    end
+    object dbedtIE: TDBEdit
+      Left = 40
+      Top = 232
+      Width = 264
+      Height = 21
+      DataField = 'IE'
+      DataSource = Ds1
+      TabOrder = 4
+    end
+    object dbedtENDERECO: TDBEdit
+      Left = 40
+      Top = 272
+      Width = 524
+      Height = 21
+      DataField = 'ENDERECO'
+      DataSource = Ds1
+      TabOrder = 5
+    end
+    object dbedtNUMERO: TDBEdit
+      Left = 40
+      Top = 312
+      Width = 134
+      Height = 21
+      DataField = 'NUMERO'
+      DataSource = Ds1
+      TabOrder = 6
+    end
+    object dbedtCIDADE: TDBEdit
+      Left = 40
+      Top = 352
+      Width = 394
+      Height = 21
+      DataField = 'CIDADE'
+      DataSource = Ds1
+      TabOrder = 7
+    end
+    object dbedtUF: TDBEdit
+      Left = 40
+      Top = 392
+      Width = 30
+      Height = 21
+      DataField = 'UF'
+      DataSource = Ds1
+      TabOrder = 8
+    end
+    object dbedtBAIRRO: TDBEdit
+      Left = 40
+      Top = 432
+      Width = 524
+      Height = 21
+      DataField = 'BAIRRO'
+      DataSource = Ds1
+      TabOrder = 9
+    end
+    object dbedtCEP: TDBEdit
+      Left = 40
+      Top = 472
+      Width = 134
+      Height = 21
+      DataField = 'CEP'
+      DataSource = Ds1
+      TabOrder = 10
+    end
+    object dbedtFONE: TDBEdit
+      Left = 40
+      Top = 512
+      Width = 199
+      Height = 21
+      DataField = 'FONE'
+      DataSource = Ds1
+      TabOrder = 11
+    end
+    object dbedtFAX: TDBEdit
+      Left = 40
+      Top = 552
+      Width = 199
+      Height = 21
+      DataField = 'FAX'
+      DataSource = Ds1
+      TabOrder = 12
+    end
+    object dbedtEMAIL: TDBEdit
+      Left = 40
+      Top = 592
+      Width = 459
+      Height = 21
+      DataField = 'EMAIL'
+      DataSource = Ds1
+      TabOrder = 13
+    end
+    object dbedtHP: TDBEdit
+      Left = 40
+      Top = 632
+      Width = 459
+      Height = 21
+      DataField = 'HP'
+      DataSource = Ds1
+      TabOrder = 14
+    end
+  end
+  object Ds1: TDataSource
+    DataSet = DM.QRY_Empresa
+    Left = 352
+    Top = 208
+  end
+end

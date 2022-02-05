@@ -1,0 +1,49 @@
+unit U_Usuarios;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.DBCtrls, Vcl.ExtCtrls, Vcl.StdCtrls,
+  Vcl.Mask, Data.DB;
+
+type
+  TForm1 = class(TForm)
+    Ds1: TDataSource;
+    lbl1: TLabel;
+    dbedtID_SENHA: TDBEdit;
+    lbl2: TLabel;
+    dbedtID_EMPRESA: TDBEdit;
+    lbl3: TLabel;
+    dbedtNOME: TDBEdit;
+    lbl4: TLabel;
+    dbedtUSUARIO: TDBEdit;
+    lbl5: TLabel;
+    dbedtSENHA: TDBEdit;
+    lbl6: TLabel;
+    dbedtNIVEL: TDBEdit;
+    lbl7: TLabel;
+    dbedtEMPRESAS: TDBEdit;
+    pnl1: TPanel;
+    dbnvgr1: TDBNavigator;
+    btn1: TButton;
+    procedure btn1Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form1: TForm1;
+
+implementation
+
+{$R *.dfm}
+
+procedure TForm1.btn1Click(Sender: TObject);
+begin
+close;
+end;
+
+end.
